@@ -1,0 +1,68 @@
+#rebbephoto{
+    width: auto;
+    height: auto;
+}
+
+.font{
+    font-family: 'Assistant', sans-serif;
+    font-weight: 300;
+    font-size: 1.7em;
+}
+
+#logo{
+    padding-left: 5vw;
+    letter-spacing: -2px;
+    font-size: 1.7em;
+}
+
+ul{
+    padding-right: 0.7em;
+}
+
+#yechee{
+    font-family: 'Assistant', sans-serif;
+}
+
+#copy{
+    font-family: 'Assistant', sans-serif;
+}
+
+.first{
+    margin: 1.3em 1em;
+    position: absolute;
+    bottom: 1.3em;
+    right: 0;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;    
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15em;
+    animation: type 4s steps(50, end); 
+}
+
+.second{
+    margin: 1em;
+    position: absolute;
+    bottom: 0em;
+    right: 0;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    font-size: 6.5em;
+    color: orange;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 15em;
+    animation: type2 4s steps(50, end); 
+}
+
+@keyframes type{ 
+    from { width: 0; } 
+  } 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100;}
+} 

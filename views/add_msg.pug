@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 from here you edit your articles
+    form(action="/messages/add", method="post")
+        #form-grup
+            label Title:
+            input.form-control(type="text", name="title")
+        #form-grup
+            label body:
+            textarea.form-control(name="body")
+        input.btn.btn-primary(type="submit", value="submit")

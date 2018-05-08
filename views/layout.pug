@@ -1,0 +1,51 @@
+doctype html
+html(dir='rtl')
+	head
+		// Import Google Icon Font
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+		// Import materialize.css
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css')
+		link(href='https://fonts.googleapis.com/css?family=Assistant:200,300,400,600|Heebo:300,400,500,900&subset=hebrew', rel='stylesheet')
+		link(rel='stylesheet', href='/css/style.css')
+		// Let browser know website is optimized for mobile
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+	body
+		// navbar
+		.navbar-fixed(dir='ltr')
+			nav
+				.nav-wrapper.orange
+					a#logo.brand-logo.font(href='#') ישיבת תות"ל ראשל"צ
+					ul#nav-mobile.right.hide-on-med-and-down
+						li
+							a.font(href='#connect') צור קשר
+						li
+							a.font(href='#map') איך מגיעים?
+						li
+							a.font(href='#trooma') תרומות
+						li
+							a.font(href='#about') אודות
+						li
+							a.font(href='#news') חדשות
+		// header section
+		.parallax-container
+			.parallax
+				img#rebbephoto(src='/img/4.jpg')
+				.anim.first ראשון לציון
+				.anim.second מוכנה למשיח
+  
+	// every page's content
+	block content
+
+	// footer
+	footer.orange.center
+		h4#yechee יחי אדוננו מורנו ורבינו מלך המשיח לעולם ועד
+		h6#copy פיתוח ועיצוב || yosil.770@gmail.com
+		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBsErA99eBnYIsR5dkmsWZkTU3irKF4R8E&callback=myMap')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js')
+		script.
+			//  parallax
+			var parallax = document.querySelector('.parallax');
+			var instance = M.Parallax.init(parallax, {});
+			// scrollspy
+			var scrollspy = document.querySelector('.scrollspy');
+			var instance = M.ScrollSpy.init(scrollspy, {});

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 register page
+    form(action="/users/profile/"+user._id, method="post")
+        #form-grup
+            label name:
+            input.form-control(type="text", name="name", value=user.name)
+        #form-grup
+            label email:
+            input.form-control(type="text", name="email", value=user.email, disabled)
+        #form-grup
+            label username:
+            input.form-control(type="text", name="username", value=user.username, disabled)
+        #form-grup
+            label password:
+            input.form-control(type="password", name="password", required)
+        #form-grup
+            label confirm:
+            input.form-control(type="password", name="password2", required)
+        
+        input.btn.btn-primary(type="submit", value="submit")
