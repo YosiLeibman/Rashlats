@@ -90,6 +90,8 @@ var users = require('./routes/users');
 app.use('/users', users);
 var messages = require('./routes/messages');
 app.use('/messages', messages);
+var donate = require('./routes/donate');
+app.use('/donate', donate);
 
 
 // home page route
