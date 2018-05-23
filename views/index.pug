@@ -1,26 +1,36 @@
 extends layout
 
 block content
+	// header section
+	.parallax-container
+		.parallax
+			img#rebbephoto(src='/img/4.jpg')
+			.anim.first ראשון לציון
+			.anim.second מוכנה למשיח
+
 	// Section: Icon Boxes
 	#lessons.section.orange
 		section.section.section-icons.center
 			.container
 				.row
 					.col.s12.m4
-						.card-panel
-							i.material-icons.large.orange-text redeem
-							h4 תמיכה
-							p עזור לנו להמשיך להתקיים. ניתן להקדיש ימי לימוד בישיבה לזכות יקיריכם
+						a(href='/donate/donate')
+							.card-panel
+								i.material-icons.large.orange-text redeem
+								h4 תמיכה
+								p עזור לנו להמשיך להתקיים. ניתן להקדיש ימי לימוד בישיבה לזכות יקיריכם
 					.col.s12.m4
 						.card-panel
-							i.material-icons.large.orange-text question_answer
-							h4 הודעות
-							p מידע על התוועדויות קרובות, כינוסים שיעורים והרצאות המתקיימים בישיבה
+							a(href='/messages/news')
+								i.material-icons.large.orange-text question_answer
+								h4 הודעות
+								p מידע על התוועדויות קרובות, כינוסים שיעורים והרצאות המתקיימים בישיבה
 					.col.s12.m4
 						.card-panel
-							i.material-icons.large.orange-text import_contacts
-							h4 שיעורים
-							p הקלטות שיעורים הנמסרים בישיבה, מתעדכן מספר פעמים בשבוע
+							a(href='/lessons/lessons')
+								i.material-icons.large.orange-text import_contacts
+								h4 שיעורים
+								p הקלטות שיעורים הנמסרים בישיבה, מתעדכן מספר פעמים בשבוע
 	// map section
 	.parallax-container
 		#map(style='width:100%;height:500px')

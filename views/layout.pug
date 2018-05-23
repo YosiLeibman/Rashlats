@@ -7,6 +7,8 @@ html(dir='rtl')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css')
 		link(href='https://fonts.googleapis.com/css?family=Assistant:200,300,400,600|Heebo:300,400,500,900&subset=hebrew', rel='stylesheet')
 		link(rel='stylesheet', href='/css/style.css')
+		link(href='https://fonts.googleapis.com/css?family=Secular+One&subset=hebrew,latin-ext', rel='stylesheet')
+
 		// Let browser know website is optimized for mobile
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 	body
@@ -19,20 +21,14 @@ html(dir='rtl')
 						li
 							a.font(href='#connect') צור קשר
 						li
-							a.font(href='#map') איך מגיעים?
+							a.font(href='/#map') איך מגיעים?
 						li
-							a.font(href='#trooma') תרומות
+							a.font(href='/donate/donate') תרומות
 						li
 							a.font(href='#about') אודות
 						li
-							a.font(href='#news') חדשות
-		// header section
-		.parallax-container
-			.parallax
-				img#rebbephoto(src='/img/4.jpg')
-				.anim.first ראשון לציון
-				.anim.second מוכנה למשיח
-  
+							a.font(href='/messages/news') חדשות
+		
 	// every page's content
 	block content
 

@@ -4,14 +4,13 @@ block content
     h1 תמוך בישיבה
     p אנו מקבלים תרומות רק לפי החוק ואיננו יכולים כרגע לקבל תרומות האשראי. אנא השאר פרטים למטה ונציג הישיבה יצור עימך קשר בהקדם על מנת להסדיר את התרומה
     form(action="/donate/donate", method="post")
-        #form-grup
-            label name:
-            input.form-control(type="text", name="name", placeholder="name", required)
-        #form-grup
-            label email:
-            input.form-control(type="text", name="email", placeholder="email", required)
-        #form-grup
-            label phone:
-            input.form-control(type="text", name="phone", placeholder="phone", required)
-
+        div.input-field
+            label שם:
+            input.form-control(type="text", name="name", required)
+        div.input-field
+            label אימייל:
+            input.form-control(type="text", name="email", required)
+        div.input-field
+            label מספר פלאפון:
+            input.form-control(type="text", name="phone", required)
         input.btn.btn-primary(type="submit", value="submit")

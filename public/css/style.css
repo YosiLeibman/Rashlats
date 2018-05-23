@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 #rebbephoto{
     width: auto;
     height: auto;
@@ -34,7 +39,7 @@ ul{
     right: 0;
     font-family: 'Heebo', sans-serif;
     font-weight: 900;    
-    font-size: 5em;
+    font-size: 5rem;
     color: rgb(255, 255, 255);
     white-space: nowrap;
     overflow: hidden;
@@ -49,7 +54,7 @@ ul{
     right: 0;
     font-family: 'Heebo', sans-serif;
     font-weight: 900;
-    font-size: 6.5em;
+    font-size: 6.5rem;
     color: orange;
     white-space: nowrap;
     overflow: hidden;
@@ -66,3 +71,28 @@ ul{
   50%{width: 0;}
   100%{ width: 100;}
 } 
+
+img#rebbephoto {
+    filter:sepia(70%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.msg{
+    border-right: 1em solid;
+    border-color: orange;
+    background: rgba(255, 165, 0, 0.3);
+    padding: 1em;
+    margin: 1em;
+}
+
+.pagetitle{
+    margin-right: 1.7rem;
+    font-family: 'Secular One', sans-serif;
+    border-right: 1rem solid;
+    border-color: orange;
+    padding: 5px;
+}
