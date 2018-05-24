@@ -16,10 +16,10 @@ html(dir='rtl')
 		.navbar-fixed(dir='ltr')
 			nav
 				.nav-wrapper.orange
-					a#logo.brand-logo.font(href='#') ישיבת תות"ל ראשל"צ
+					a#logo.brand-logo.font(href='/') ישיבת תות"ל ראשל"צ
 					ul#nav-mobile.right.hide-on-med-and-down
 						li
-							a.font(href='#connect') צור קשר
+							a.font(href='#connect') רישום לישיבה
 						li
 							a.font(href='/#map') איך מגיעים?
 						li
@@ -28,7 +28,30 @@ html(dir='rtl')
 							a.font(href='#about') אודות
 						li
 							a.font(href='/messages/news') חדשות
-		
+
+		// side nav for mobile
+		ul#slide-out.sidenav
+			li
+				a(href='/lessons/lessons')
+					i.material-icons import_contacts
+					| שיעורים
+			li
+				a(href='/donate/donate')
+					i.material-icons redeem
+					| תמיכה בישיבה
+			li
+				a(href='/messages/news')
+					i.material-icons question_answer
+					| הודעות
+			li
+				.divider
+			li
+				a.subheader ישיבת חב"ד ראשל"צ
+			li
+				a.waves-effect.orange(href='#!') רישום לישיבה
+		a.sidenav-trigger(href='#', data-target='slide-out')
+			i.material-icons menu
+
 	// every page's content
 	block content
 
@@ -45,3 +68,11 @@ html(dir='rtl')
 			// scrollspy
 			var scrollspy = document.querySelector('.scrollspy');
 			var instance = M.ScrollSpy.init(scrollspy, {});
+			// modals
+			document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.modal');
+			var instances = M.Modal.init(elems);});
+			// sidenav
+			document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems);});

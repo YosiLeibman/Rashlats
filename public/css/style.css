@@ -96,3 +96,14 @@ a {
     border-color: orange;
     padding: 5px;
 }
+
+.msgtitle{
+    font-family: 'Secular One', sans-serif;
+    font-size: 1.2rem;
+    color: orange;
+}
+
+p.msgtitle{
+    padding: 0 1.7rem;
+    font-size: 1.5rem;    
+}

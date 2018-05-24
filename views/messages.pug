@@ -6,6 +6,6 @@ block content
     each message, i in messages
       div.msg
         li.list-group-item
-        a(href="/messages/"+message._id)= message.title
+        a.msgtitle(href="")= message.title
         li.list-group-item
-        a(href="/messages/"+message._id)= message.body
+        a(href="")= message.body
