@@ -28,7 +28,8 @@ html(dir='rtl')
 							a.font(href='#about') אודות
 						li
 							a.font(href='/messages/news') חדשות
-
+					a.sidenav-trigger(href='#', data-target='slide-out')
+						i.material-icons menu
 		// side nav for mobile
 		ul#slide-out.sidenav
 			li
@@ -49,8 +50,6 @@ html(dir='rtl')
 				a.subheader ישיבת חב"ד ראשל"צ
 			li
 				a.waves-effect.orange(href='#!') רישום לישיבה
-		a.sidenav-trigger(href='#', data-target='slide-out')
-			i.material-icons menu
 
 	// every page's content
 	block content
