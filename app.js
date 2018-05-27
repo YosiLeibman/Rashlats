@@ -92,7 +92,8 @@ var messages = require('./routes/messages');
 app.use('/messages', messages);
 var donate = require('./routes/donate');
 app.use('/donate', donate);
-
+var lessons = require('./routes/lessons');
+app.use('/lessons', donate);
 
 // home page route
 app.get('/', function(req,res){

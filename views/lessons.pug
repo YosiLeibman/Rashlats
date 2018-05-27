@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1.pagetitle שיעורים
+  p.msgtitle השיעורים מתעדכנים מספר פעמים בשבוע. כל השיעורים נמסרו בישיבה
+  ul.list-group
+    each video, i in videos
+      .video
+        img(href="../public/img/lessons/2.png")
+        a.msgtitle(href="") = video.title
+        li.list-group-item
+        a(href="")= message.body
