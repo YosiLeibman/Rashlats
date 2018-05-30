@@ -75,3 +75,12 @@ html(dir='rtl')
 			document.addEventListener('DOMContentLoaded', function() {
 			var sidenav = document.querySelectorAll('.sidenav');
 			var instances = M.Sidenav.init(sidenav);});
+			// date picker
+			document.addEventListener('DOMContentLoaded', function() {
+			var dp = document.querySelectorAll('.datepicker');
+			var instances = M.Datepicker.init(dp);});
+			// time picker
+			document.addEventListener('DOMContentLoaded', function() {
+			var tp = document.querySelectorAll('.timepicker');
+			var instances = M.Timepicker.init(tp,{'twelveHour': false,  'i18n': {
+			cancel: 'ביטול', done: 'שמור'}});});

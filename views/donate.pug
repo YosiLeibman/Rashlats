@@ -3,7 +3,7 @@ extends layout
 block content
     h1.pagetitle תמוך בישיבה
     p.msgtitle אנו מקבלים תרומות רק לפי החוק ואיננו יכולים כרגע לקבל תרומות באשראי. אנא השאר פרטים למטה ונציג הישיבה יצור עימך קשר בהקדם על מנת להסדיר את התרומה.
-    form(action="/donate/donate", method="post")
+    form.inptreg(action="/donate/donate", method="post")
         div.input-field
             label שם:
             input.form-control(type="text", name="name", required)
@@ -13,4 +13,10 @@ block content
         div.input-field
             label מספר פלאפון:
             input.form-control(type="text", name="phone", required)
+        //- div.input-field
+        //-     label שעה נוחה ליצירת קשר בימים הקרובים:
+        //-     input.datepicker(type="text", name="date",)
+        div.input-field
+            label שעה נוחה ליצירת קשר בימים הקרובים:
+            input.timepicker(type="text", name="time",)
         input.btn.btn-primary(type="submit", value="submit")

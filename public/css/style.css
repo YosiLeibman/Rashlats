@@ -107,3 +107,40 @@ p.msgtitle{
     padding: 0 1.7rem;
     font-size: 1.5rem;    
 }
+
+.inptreg{
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* ::-webkit-input-placeholder {
+    color: pink;
+} 
+*/
+
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+    border-bottom: 1px solid orange;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid green;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 #000;
+  }
+/* time picker color */
+ .picker__date-display { background-color: orange; }
+.picker__day.picker__day--today { color: orange; }
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { background-color: orange;}
+.picker__close { color: orange !important;}
+.picker__today { color: orange !important;}
+.clockpicker-tick:hover { background: orange !important; }
+.clockpicker-canvas line { stroke: orange !important; }
+.clockpicker-canvas-bearing { fill: orange !important; }
+.clockpicker-canvas-bg { fill: orange !important; }
+
