@@ -19,7 +19,7 @@ html(dir='rtl')
 					a#logo.brand-logo.font(href='/') ישיבת תות"ל ראשל"צ
 					ul#nav-mobile.right.hide-on-med-and-down
 						li
-							a.font(href='#connect') רישום לישיבה
+							a.font(href='/students/regtoyeshiva') רישום לישיבה
 						li
 							a.font(href='/#map') איך מגיעים?
 						li
@@ -49,13 +49,13 @@ html(dir='rtl')
 			li
 				a.subheader ישיבת חב"ד ראשל"צ
 			li
-				a.waves-effect.orange(href='#!') רישום לישיבה
+				a.waves-effect.orange(href='/students/regtoyeshiva') רישום לישיבה
 
 	// every page's content
 	block content
 
 	// footer
-	footer.orange.center
+	footer.orange.center.ftr
 		h4#yechee יחי אדוננו מורנו ורבינו מלך המשיח לעולם ועד
 		h6#copy פיתוח ועיצוב || yosil.770@gmail.com
 		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBsErA99eBnYIsR5dkmsWZkTU3irKF4R8E&callback=myMap')
@@ -84,3 +84,7 @@ html(dir='rtl')
 			var tp = document.querySelectorAll('.timepicker');
 			var instances = M.Timepicker.init(tp,{'twelveHour': false,  'i18n': {
 			cancel: 'ביטול', done: 'שמור'}});});
+			// select list
+			document.addEventListener('DOMContentLoaded', function() {
+			var sl = document.querySelectorAll('select');
+			var instances = M.FormSelect.init(sl);});

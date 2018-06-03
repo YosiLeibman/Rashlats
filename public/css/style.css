@@ -144,3 +144,8 @@ p.msgtitle{
 .clockpicker-canvas-bearing { fill: orange !important; }
 .clockpicker-canvas-bg { fill: orange !important; }
 
+
+
+.ftr{
+    bottom: 0 !important;
+}

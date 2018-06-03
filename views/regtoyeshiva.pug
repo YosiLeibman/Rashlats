@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    h1.pagetitle רישום לישיבה
+    p.msgtitle אנא השאירו פרטים מלאים ןנציג הישיבה יחזור אליכם בהקדם.
+    form.inptreg(action="/students/regtoyeshiva", method="post")
+        div.input-field
+            label שם מלא:
+            input.form-control(type="text", name="name", required)
+        div.input-field
+            label אימייל:
+            input.form-control(type="text", name="email", required)
+        div.input-field
+            label מספר פלאפון:
+            input.form-control(type="text", name="phone", required)
+        div.input-field
+            label שעה נוחה ליצירת קשר בימים הקרובים:
+            input.timepicker(type="text", name="time",)
+        div.input-field.col.s12
+            select(multiple='')
+                option(value='', disabled='', selected='') בחר מהרשימה
+                option(value='netanya') נתניה
+                option(value='tzfatk') צפת קטנה
+                option(value='tzfatg') צפת גדולה
+                option(value='natzratk') נצרת קטנה
+                option(value='natzratg') נצרת גדולה
+                option(value='toratemetk') תו"א קטנה
+                option(value='toratemetg') תו"א גדולה
+                option(value='oryehudak') אור יהודה קטנה
+                option(value='oryehudag') אור יהודה גדולה
+                option(value='kryatgatk') ק"ג קטנה
+                option(value='kryatgatg') ק"ג גדולה
+                option(value='krayot') קריות
+                option(value='lod') לוד
+                option(value='beersheva') באר שבע
+                option(value='beitsheesh') בית שמש                
+                option(value='other') אחר
+                
+            label ישיבה קודמת, במידה ויש יותר מאחת אנא ציינו את כולם
+        input.btn.btn-primary(type="submit", value="submit")
