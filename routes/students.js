@@ -41,6 +41,7 @@ router.post('/regtoyeshiva', function(req, res){
             if (err) throw err;
             console.log("saved!");
             sendMailToYeshiva();
+            sendMailToPerson(name, email);
         })
          res.end();
         
@@ -74,7 +75,31 @@ function sendMailToYeshiva(){
      });
 }
 
-function sendMailToPerson(){
+function sendMailToPerson(name, email){
+    // create reusable transport method (opens pool of SMTP connections)
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+               user: 'rashlatsyeshiva@gmail.com',
+               pass: 'rashlats'
+           }
+    });
+
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+    from: "yeshiva ✔ <rashlatsyeshiva@gmail.com>", // sender address
+    to: email, // list of receivers
+    subject: "שלום "+name+"✔", // Subject line
+    html: "<b>בקשת הרישום התקבלה בהצלחה, נציג הישיבה יצור עימכם קשר בהקדם</b>" // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function (err, info) {
+        if(err)
+          console.log(err)
+        else
+          console.log(info);
+     });
 
 }
 module.exports = router;
