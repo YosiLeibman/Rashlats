@@ -3,6 +3,8 @@ const router = express.Router();
 const fs = require('fs');
 const nodemailer = require("nodemailer");
 
+var html;
+var student = {};
 // Donate page
 router.get('/regtoyeshiva', function(req, res){
       res.render('regtoyeshiva', {
@@ -15,7 +17,7 @@ router.post('/regtoyeshiva', function(req, res){
     var phone = req.body.phone;
     var time = req.body.time;
 
-    var student = {
+    student = {
         name: name,
         email: email,
         phone: phone,
@@ -35,20 +37,27 @@ router.post('/regtoyeshiva', function(req, res){
     // } else {
     //     // nodemailer here
     //     console.log(name, email, phone, time);
+
+    fs.readFile('./email/email.html', 'utf8', function (err,data) {
+      if (err) {
+        return console.log(err);
+      }
+        html = data;
+    });
          console.log(student);
          res.redirect('/');
         fs.writeFile('./logs/' + name + '.txt', JSON.stringify(student), function (err){
             if (err) throw err;
             console.log("saved!");
-            sendMailToYeshiva();
-            sendMailToPerson(name, email);
+            sendMailToYeshiva(student);
+            sendMailToPerson(name, email, html);
         })
          res.end();
         
     // }
 });
 
-function sendMailToYeshiva(){
+function sendMailToYeshiva(student){
     // create reusable transport method (opens pool of SMTP connections)
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -63,7 +72,7 @@ function sendMailToYeshiva(){
     from: "yeshiva ✔ <rashlatsyeshiva@gmail.com>", // sender address
     to: "yosil.770@gmail.com", // list of receivers
     subject: "Hello ✔", // Subject line
-    html: "<b>Hello world ✔</b>" // html body
+    html: JSON.stringify(student) // html body
     };
 
     // send mail with defined transport object
@@ -75,7 +84,7 @@ function sendMailToYeshiva(){
      });
 }
 
-function sendMailToPerson(name, email){
+function sendMailToPerson(name, email, html){
     // create reusable transport method (opens pool of SMTP connections)
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -89,8 +98,8 @@ function sendMailToPerson(name, email){
     var mailOptions = {
     from: "yeshiva ✔ <rashlatsyeshiva@gmail.com>", // sender address
     to: email, // list of receivers
-    subject: "שלום "+name+"✔", // Subject line
-    html: "<b>בקשת הרישום התקבלה בהצלחה, נציג הישיבה יצור עימכם קשר בהקדם</b>" // html body
+    subject: "שלום " + name, // Subject line
+    html: html // html body
     };
 
     // send mail with defined transport object
