@@ -5,6 +5,7 @@ const nodemailer = require("nodemailer");
 
 var html;
 var student = {};
+var markup;
 // Donate page
 router.get('/regtoyeshiva', function(req, res){
       res.render('regtoyeshiva', {
@@ -23,6 +24,18 @@ router.post('/regtoyeshiva', function(req, res){
         phone: phone,
         time: time
     };
+
+     markup = `
+        <div class="person">
+            <h2>
+               שם:  ${student.name}
+            </h2>
+            <p>דוא"ל:  ${student.email}</p>
+            <p > פלאפון: ${student.phone}</p>
+            <p > שעה נוחה ליצירת קשר: ${student.time}</p>
+            
+        </div>
+`;
 
     // req.checkBody('name', 'נא למלא שם').notEmpty();
     // req.checkBody('phone', 'נא למלא מספר פלאפון').notEmpty();
@@ -49,7 +62,7 @@ router.post('/regtoyeshiva', function(req, res){
         fs.writeFile('./logs/' + name + '.txt', JSON.stringify(student), function (err){
             if (err) throw err;
             console.log("saved!");
-            sendMailToYeshiva(student);
+            sendMailToYeshiva(markup);
             sendMailToPerson(name, email, html);
         })
          res.end();
@@ -71,8 +84,8 @@ function sendMailToYeshiva(student){
     var mailOptions = {
     from: "yeshiva ✔ <rashlatsyeshiva@gmail.com>", // sender address
     to: "yosil.770@gmail.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    html: JSON.stringify(student) // html body
+    subject: "רישום לישיבה", // Subject line
+    html: markup // html body
     };
 
     // send mail with defined transport object
