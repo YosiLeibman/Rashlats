@@ -51,7 +51,7 @@ router.post('/regtoyeshiva', function(req, res){
     //     // nodemailer here
     //     console.log(name, email, phone, time);
 
-    fs.readFile('./email/email.html', 'utf8', function (err,data) {
+    fs.readFile('./email/regemail.html', 'utf8', function (err,data) {
       if (err) {
         return console.log(err);
       }
@@ -59,7 +59,7 @@ router.post('/regtoyeshiva', function(req, res){
     });
          console.log(student);
          res.redirect('/');
-        fs.writeFile('./logs/' + name + '.txt', JSON.stringify(student), function (err){
+        fs.writeFile('./logs/regs/' + name + '.txt', JSON.stringify(student), function (err){
             if (err) throw err;
             console.log("saved!");
             sendMailToYeshiva(markup);
