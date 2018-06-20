@@ -96,11 +96,12 @@ var lessons = require('./routes/lessons');
 app.use('/lessons', lessons);
 var students = require('./routes/students');
 app.use('/students', students);
+var uploads = require('./routes/uploads');
+app.use('/uploads', uploads);
 
 // home page route
 app.get('/', function(req,res){
-    res.render('index',{
-      // here i can send news from db to home page directly - just need to make error validation        
+    res.render('index',{       
     });
 });
 
