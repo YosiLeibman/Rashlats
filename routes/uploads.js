@@ -26,7 +26,7 @@ router.post('/uploads', function(req, res, next){
         file.path = __dirname + '/../public/downloads/' + folder + '/' + file.name;
     });
     form.on('file', function (name, file){
-        console.log('Uploaded ' + file.name);
+        console.log('Uploaded ' + file.name + 'to folder:'+ folder);
     });
 });
 module.exports = router;

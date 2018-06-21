@@ -149,3 +149,13 @@ p.msgtitle{
 .ftr{
     bottom: 0 !important;
 }
+
+.downloadfolderlink{
+    margin: auto 10px;
+    padding: 10px;
+    font-size: 26pt;
+    background: orange;
+    color: antiquewhite;
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
+}
