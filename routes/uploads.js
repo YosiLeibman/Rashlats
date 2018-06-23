@@ -5,12 +5,12 @@ const formidable = require('formidable');
 
 var folder;
 // Donate page
-router.get('/', function(req, res){
+router.get('/', ensureAuthenticated, function(req, res){
       res.render('uploadchooser', {
       });
 });
 
-router.get('/:folder', function(req, res){
+router.get('/:folder', ensureAuthenticated, function(req, res){
     folder = req.params.folder;
     res.render('uploads', {
         folder: folder
@@ -29,4 +29,14 @@ router.post('/uploads', function(req, res, next){
         console.log('Uploaded ' + file.name + 'to folder:'+ folder);
     });
 });
+
+// Access Control
+function ensureAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+      return next();
+    } else {
+      req.flash('danger', 'Please login');
+      res.redirect('/users/login');
+    }
+  }
 module.exports = router;
