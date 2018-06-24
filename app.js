@@ -13,6 +13,7 @@ var app = express();
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
+
 app.use(bodyParser.json());
 
 //static folder
@@ -97,9 +98,6 @@ var students = require('./routes/students');
 app.use('/students', students);
 var uploads = require('./routes/uploads');
 app.use('/uploads', uploads);
-var downloads = require('./routes/downloads');
-app.use('/downloads', downloads);
-
 
 // home page route
 app.get('/', function(req,res){

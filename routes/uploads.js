@@ -13,6 +13,7 @@ router.get('/', ensureAuthenticated, function(req, res){
 router.get('/:folder', ensureAuthenticated, function(req, res){
     folder = req.params.folder;
     res.render('uploads', {
+        folder: folder
     });
 });
 
@@ -29,13 +30,12 @@ router.post('/uploads', function(req, res, next){
     });
 });
 
-
-
 // Access Control
 function ensureAuthenticated(req, res, next){
     if(req.isAuthenticated()){
       return next();
     } else {
+      req.flash('danger', 'Please login');
       res.redirect('/users/login');
     }
   }
