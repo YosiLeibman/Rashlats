@@ -3,10 +3,18 @@ extends layout
 block content
   h1.pagetitle קבצי החייל
   ul.list-group
-    each file, i in files
+    each file, i in hachyalfiles
       div.msg
         li.list-group-item
         a.msgtitle(href= "/downloads/hachayal/"+file)= file
         li.list-group-item
-        a(href=  "/downloads/hachayal/"+file) ghhfb
+        a(href=  "/downloads/hachayal/"+file) לחץ כאן
+    h1.pagetitle קבצי הערות התמימים
+    ul.list-group
+      each file, i in heoressfiles
+        div.msg
+          li.list-group-item
+          a.msgtitle(href= "/downloads/heoress/"+file)= file
+          li.list-group-item
+          a(href=  "/downloads/heoress/"+file) לחץ כאן
 

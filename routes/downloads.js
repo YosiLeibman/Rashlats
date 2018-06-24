@@ -4,9 +4,12 @@ const fs = require('fs');
 
 // page
 router.get('/', function(req, res){
-    files = fs.readdirSync(__dirname + "/../public/downloads/hachayal");
+    hachyalfiles = fs.readdirSync(__dirname + "/../public/downloads/hachayal");
+    heoressfiles = fs.readdirSync(__dirname + "/../public/downloads/heoress");
+    
     res.render('downloads', {
-        files: files
+        hachyalfiles: hachyalfiles,
+        heoressfiles: heoressfiles
       });
 });
 
