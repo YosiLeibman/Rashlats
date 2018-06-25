@@ -59,7 +59,7 @@ router.post('/donate', function(req, res){
     } else {
         res.redirect('/');
         console.log(sponser);
-        fs.writeFile('./logs/donates/' + name + '.txt', JSON.stringify(sponser), function (err){
+        fs.writeFile('./logs/donates/' + name + '.log', JSON.stringify(sponser), function (err){
             if (err) throw err;
                 console.log("saved!");
                 sendMailToYeshiva(markup);
