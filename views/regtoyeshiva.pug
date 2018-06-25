@@ -8,16 +8,22 @@ block content
             label שם מלא:
             input.form-control(type="text", name="name", required)
         div.input-field
+            label ת"ז:
+            input.form-control(type="text", name="idnum", required)
+        div.input-field
             label אימייל:
             input.form-control(type="text", name="email", required)
         div.input-field
             label מספר פלאפון:
             input.form-control(type="text", name="phone", required)
         div.input-field
+            label תאריך לידה:
+            input.datapicker(type="text", class="datepicker", name="bday", required)
+        div.input-field
             label שעה נוחה ליצירת קשר בימים הקרובים:
             input.timepicker(type="text", name="time",)
         div.input-field.col.s12
-            select(multiple='')
+            select(name="lastyeshiva")
                 option(value='', disabled='', selected='') בחר מהרשימה
                 option(value='netanya') נתניה
                 option(value='tzfatk') צפת קטנה
@@ -34,7 +40,6 @@ block content
                 option(value='lod') לוד
                 option(value='beersheva') באר שבע
                 option(value='beitsheesh') בית שמש                
-                option(value='other') אחר
-                
-            label ישיבה קודמת, במידה ויש יותר מאחת אנא ציינו את כולם
+                option(value='other') אחר   
+            label מקום לימודים אחרון
         input.btn.btn-primary(type="submit", value="submit")

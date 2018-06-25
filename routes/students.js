@@ -16,13 +16,22 @@ router.post('/regtoyeshiva', function(req, res){
     var name = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
-    var time = req.body.time;
+    var time = req.body.time;    
+    var bday = req.body.bday;
+    var idnum = req.body.idnum;
+    var lastyeshiva = req.body.lastyeshiva;
+    
+    
+
 
     student = {
         name: name,
         email: email,
         phone: phone,
-        time: time
+        time: time,
+        bday: bday,
+        idnum: idnum,
+        lastyeshiva: lastyeshiva
     };
 
      markup = `
@@ -33,6 +42,9 @@ router.post('/regtoyeshiva', function(req, res){
             <p>דוא"ל:  ${student.email}</p>
             <p > פלאפון: ${student.phone}</p>
             <p > שעה נוחה ליצירת קשר: ${student.time}</p>
+            <p > תאריך לידה: ${student.bday}</p>
+            <p > ת"ז: ${student.idnum}</p>
+            <p > מקום לימודים אחרון: ${student.lastyeshiva}</p>
             
         </div>
 `;

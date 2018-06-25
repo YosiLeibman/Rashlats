@@ -97,3 +97,8 @@ html(dir='rtl')
 			document.addEventListener('DOMContentLoaded', function() {
 			var sl = document.querySelectorAll('select');
 			var instances = M.FormSelect.init(sl);});
+			// data picker
+			document.addEventListener('DOMContentLoaded', function() {
+			var dp = document.querySelectorAll('.datepicker');
+			var instances = M.Datepicker.init(dp, {'twelveHour': false,  'i18n': {
+			cancel: 'ביטול', done: 'שמור'}, 'yearRange': 25, 'isRTL': true});});
