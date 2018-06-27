@@ -7,6 +7,8 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 const config = require('./config/database');
+var fs = require('fs');
+
 
 var app = express();
 
@@ -100,10 +102,13 @@ app.use('/uploads', uploads);
 var downloads = require('./routes/downloads');
 app.use('/downloads', downloads);
 
+// pet list of photos to render in index page
+var imgs = fs.readdirSync(__dirname + "/../rashlats/public/img/yeshiva");
 
 // home page route
 app.get('/', function(req,res){
-    res.render('index',{       
+    res.render('index',{
+      imgs: imgs      
     });
 });
 

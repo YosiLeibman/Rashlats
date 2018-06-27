@@ -25,7 +25,7 @@ html(dir='rtl')
 						li
 							a.font(href='/students/regtoyeshiva') רישום לישיבה
 						li
-							a.font(href='/#map') איך מגיעים?
+							a.font(href='/#map') ?איך מגיעים
 						li
 							a.font(href='/donate/donate') תמיכה
 						li
@@ -102,3 +102,23 @@ html(dir='rtl')
 			var dp = document.querySelectorAll('.datepicker');
 			var instances = M.Datepicker.init(dp, {'twelveHour': false,  'i18n': {
 			cancel: 'ביטול', done: 'שמור'}, 'yearRange': 25, 'isRTL': true});});
+		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-121421331-1')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-121421331-1');
+		script.
+			var slideIndex = 0;
+			showSlides();
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				for (i = 0; i < slides.length; i++) {
+				    slides[i].style.display = "none"; 
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1} 
+				slides[slideIndex-1].style.display = "block"; 
+				setTimeout(showSlides, 3000);
+			}

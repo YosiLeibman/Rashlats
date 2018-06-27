@@ -71,6 +71,48 @@ ul{
   50%{width: 0;}
   100%{ width: 100;}
 } 
+/* for stanrard smartphons */
+@media (max-width:420px) {
+    .first, .second{
+        font-size: 3.3em;
+     }
+     .first{
+        color: rgb(247, 217, 162); 
+        margin: 0.4em;
+     }
+     .second{
+        right: .6em;         
+     }
+  }
+    /* for iphone 5 and less  */
+  @media (max-width:320px) {
+    .first, .second{
+        font-size: 2.7em;
+     }
+     .first{
+        color: rgb(247, 217, 162); 
+        margin: 0.4em;
+     }
+     .second{
+        right: .6em;         
+     }
+  }
+
+/* for tablets */
+  @media 
+  (min-device-width: 600px) 
+  and (max-device-width: 1239px) {
+    .first{
+        top: -1em;
+        color: rgb(78, 55, 12);
+        font-size: 3.9em;         
+     }
+     .second{
+        top: 0em;
+        font-size: 4.7em;
+        right: .2em;         
+     }
+}
 
 img#rebbephoto {
     filter:sepia(70%);
@@ -144,8 +186,6 @@ p.msgtitle{
 .clockpicker-canvas-bearing { fill: orange !important; }
 .clockpicker-canvas-bg { fill: orange !important; }
 
-
-
 .ftr{
     bottom: 0 !important;
 }
@@ -158,4 +198,18 @@ p.msgtitle{
     color: antiquewhite;
     font-family: 'Secular One', sans-serif;
     text-align: center;
+}
+
+.slides{
+    /* transition: opacity 1s ease-in-out;     */
+    filter:sepia(70%);
+    width: 100%;
+    height: auto;
+}
+
+.mySlides{
+    transition: opacity 3s ease-in-out;
+    /* TO DO */
+    /* some filter to pic can smoothen the proccess */
+    /* fit all photos to correct size and coverege */
 }

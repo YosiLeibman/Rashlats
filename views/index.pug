@@ -4,10 +4,11 @@ block content
 	// header section
 	.parallax-container
 		.parallax
-			img#rebbephoto(src='/img/4.jpg')
+			img#rebbephoto.mySlides(src='/img/4.jpg')
 			.anim.first ראשון לציון
 			.anim.second מוכנה למשיח
-
+		each img, i in imgs
+			img.mySlides.slides(src="/img/yeshiva/"+img, alt="some image :)", style="display: none")
 	// Section: Icon Boxes
 	#lessons.section.orange
 		section.section.section-icons.center
