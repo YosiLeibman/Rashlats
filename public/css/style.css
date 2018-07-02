@@ -3,11 +3,6 @@ body{
     padding: 0;
 }
 
-#rebbephoto{
-    width: auto;
-    height: auto;
-}
-
 .font{
     font-family: 'Assistant', sans-serif;
     font-weight: 300;
@@ -83,11 +78,15 @@ ul{
      .second{
         right: .6em;         
      }
+     .imgcontainer{
+         height: 35vh;
+         width: 100%;
+     }
   }
     /* for iphone 5 and less  */
-  @media (max-width:320px) {
+  @media (max-width:361px) {
     .first, .second{
-        font-size: 2.7em;
+        font-size: 1.9em;
      }
      .first{
         color: rgb(247, 217, 162); 
@@ -112,10 +111,6 @@ ul{
         font-size: 4.7em;
         right: .2em;         
      }
-}
-
-img#rebbephoto {
-    filter:sepia(70%);
 }
 
 a {
@@ -200,16 +195,15 @@ p.msgtitle{
     text-align: center;
 }
 
-.slides{
-    /* transition: opacity 1s ease-in-out;     */
+img{
     filter:sepia(70%);
-    width: 100%;
-    height: auto;
 }
 
-.mySlides{
-    transition: opacity 3s ease-in-out;
-    /* TO DO */
-    /* some filter to pic can smoothen the proccess */
-    /* fit all photos to correct size and coverege */
-}
+
+/* .slides li img {
+    background-attachment: fixed;
+} */
+/* .slider .slides li img{
+    width: 100% !important;
+    height: auto !important;
+} */

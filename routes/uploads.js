@@ -22,7 +22,11 @@ router.post('/uploads', function(req, res, next){
     var form = new formidable.IncomingForm();
     form.parse(req);
     form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/../public/downloads/' + folder + '/' + file.name;
+        if (folder != "img") {
+            file.path = __dirname + '/../public/downloads/' + folder + '/' + file.name;
+        } else{
+            file.path = __dirname + '/../public/img/yeshiva/' + file.name;
+        }
     });
     form.on('file', function (name, file){
         console.log('Uploaded ' + file.name + 'to folder:'+ folder);

@@ -102,6 +102,10 @@ html(dir='rtl')
 			var dp = document.querySelectorAll('.datepicker');
 			var instances = M.Datepicker.init(dp, {'twelveHour': false,  'i18n': {
 			cancel: 'ביטול', done: 'שמור'}, 'yearRange': 25, 'isRTL': true});});
+			// slider
+			document.addEventListener('DOMContentLoaded', function() {
+			var slider = document.querySelectorAll('.slider');
+			var instances = M.Slider.init(slider,{'indicators': false, "interval": 3500});});
 		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-121421331-1')
 		script.
 			window.dataLayer = window.dataLayer || [];
@@ -113,7 +117,7 @@ html(dir='rtl')
 			showSlides();
 			function showSlides() {
 				var i;
-				var slides = document.getElementsByClassName("mySlides");
+				var slides = document.getElementsByClassName("slides");
 				for (i = 0; i < slides.length; i++) {
 				    slides[i].style.display = "none"; 
 				}
