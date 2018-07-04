@@ -2,15 +2,11 @@ extends layout
 
 block content
 	// header section
-	//.parallax-container
-		.parallax
-	.slider
-		ul.slides
-			each img, i in imgs
-				li
-					img(src="/img/yeshiva/"+img, alt="some image :")
-		//- .anim.first ראשון לציון
-		//- .anim.second מוכנה למשיח
+	.containerimg
+		each img, i in imgs
+				img.mySlides(src="/img/yeshiva/"+img, alt="some image :")
+				.anim.first ראשון לציון
+				.anim.second מוכנה למשיח
 	// Section: Icon Boxes
 	#lessons.section.orange
 		section.section.section-icons.center
