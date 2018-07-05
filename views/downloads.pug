@@ -6,15 +6,15 @@ block content
     each file, i in hachyalfiles
       div.msg
         li.list-group-item
-        a.msgtitle(href= "/downloads/hachayal/"+file)= file
+        a.msgtitle(href= "/downloads/hachayal/"+file download="")= file
         li.list-group-item
-        a(href=  "/downloads/hachayal/"+file) לחץ כאן
+        a(href=  "/downloads/hachayal/"+file  download="") לחץ כאן
     h1.pagetitle קבצי הערות התמימים
     ul.list-group
       each file, i in heoressfiles
         div.msg
           li.list-group-item
-          a.msgtitle(href= "/downloads/heoress/"+file)= file
+          a.msgtitle(href= "/downloads/heoress/"+file download="")= file
           li.list-group-item
-          a(href=  "/downloads/heoress/"+file) לחץ כאן
+          a(href=  "/downloads/heoress/"+file  download="") לחץ כאן
 
