@@ -5,10 +5,11 @@ block content
 	.containerimg
 		each img, i in imgs
 			img.mySlides(src="/img/yeshiva/"+img, alt="some image :")
+			//- .mySlides(style="background-image: url(http://127.0.0.1:3000/img/yeshiva/" + img +");")
 			.anim.first ראשון לציון
 			.anim.second מוכנה למשיח
 	// Section: Icon Boxes
-	#lessons.section.orange
+	.section.orange
 		section.section.section-icons.center
 			.container
 				.row

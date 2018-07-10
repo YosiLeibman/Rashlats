@@ -38,6 +38,7 @@ ul{
     color: rgb(255, 131, 30);
     white-space: nowrap;
     overflow: hidden;
+    z-index: 30;
     /* animation: type 4s steps(50, end);  */
 }
 
@@ -52,6 +53,7 @@ ul{
     color: orange;
     white-space: nowrap;
     overflow: hidden;
+    z-index: 30;    
     /* animation: type2 4s steps(50, end);  */
 }
 
@@ -175,16 +177,16 @@ p.msgtitle{
     text-align: center;
 }
 
-img{
-    filter:sepia(70%);
-    width: 100%;
-    height: 80%;
+.containerimg{
+    height: 80%;  
 }
 
-.containerimg{
-    height: 80%; 
-    z-index: -100;  
+.mySlides{
+    filter:sepia(70%);
+    width: 100% !important;
+    height: auto !important;
 }
+
 /* 
 .parallax-container {
     height: 550px;
