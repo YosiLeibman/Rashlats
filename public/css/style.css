@@ -30,6 +30,7 @@ ul{
 .first{
     /* margin: 1.3rem 1rem; */
     position: absolute;
+    margin-bottom: 0.7rem;
     bottom: 15%;
     right: 3%;
     font-family: 'Heebo', sans-serif;
@@ -38,7 +39,11 @@ ul{
     color: rgb(255, 131, 30);
     white-space: nowrap;
     overflow: hidden;
-    z-index: 30;
+    z-index: 32;
+    background: url('http://127.0.0.1:3000/img/brush.svg');
+    background-repeat: no-repeat;
+    background-size: 115%;
+    background-position: center;
     /* animation: type 4s steps(50, end);  */
 }
 
@@ -53,7 +58,11 @@ ul{
     color: orange;
     white-space: nowrap;
     overflow: hidden;
-    z-index: 30;    
+    z-index: 30;  
+    background: url('http://127.0.0.1:3000/img/brush.svg');
+    background-repeat: no-repeat;
+    background-size: 113%;
+    background-position: center;  
     /* animation: type2 4s steps(50, end);  */
 }
 
@@ -84,16 +93,23 @@ ul{
   (min-device-width: 600px) 
   and (max-device-width: 1239px) {
     .first{
-        top: -1em;
-        color: rgb(78, 55, 12);
+        bottom: 500px;
+        color: rgb(255, 131, 30);
         font-size: 3.9rem;         
      }
      .second{
-        top: 0em;
+        bottom: 430px;
         font-size: 4.7rem;
-        right: .2rem;         
+        right: 50px;         
      }
 }
+
+/* only for desktop */
+@media (min-width:1200px) {
+    .section{
+        padding-top: 2em;
+     }
+  }
 
 a {
     text-decoration: none;
@@ -179,12 +195,15 @@ p.msgtitle{
 
 .containerimg{
     height: 80%;  
+    background-color: #ff9800;
 }
 
 .mySlides{
     filter:sepia(70%);
-    width: 100% !important;
-    height: auto !important;
+    max-width: 100% !important;
+    max-height: 80vh !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 
