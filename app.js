@@ -103,7 +103,7 @@ var downloads = require('./routes/downloads');
 app.use('/downloads', downloads);
 
 // pet list of photos to render in index page
-var imgs = fs.readdirSync(__dirname + "/../rashlats/public/img/yeshiva");
+var imgs = fs.readdirSync(__dirname + "/../Rashlats/public/img/yeshiva");
 
 // home page route
 app.get('/', function(req,res){
