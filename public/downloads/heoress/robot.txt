@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /js/
+Disallow: /bower_components/
+Sitemap: http://178.128.164.124:3000/sitemap.xml
