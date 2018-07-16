@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const http = require('http');
 const formidable = require('formidable');
+const path = require('path');
 
 var folder;
 // Donate page
@@ -22,14 +23,15 @@ router.post('/uploads', function(req, res, next){
     var form = new formidable.IncomingForm();
     form.parse(req);
     form.on('fileBegin', function (name, file){
-        if (folder != "img") {
-            file.path = __dirname + '/../public/downloads/' + folder + '/' + file.name;
+        if (folder == "heoress" || folder == "hachayal") {
+            file.path = path.join(__dirname, '/../','public/downloads/', folder , '/' , file.name);
         } else{
-            file.path = __dirname + '/../public/img/yeshiva/' + file.name;
+            file.path = path.join(__dirname , '/../','public/img/yeshiva/', file.name);
         }
     });
     form.on('file', function (name, file){
         console.log('Uploaded ' + file.name + 'to folder:'+ folder);
+        res.redirect('/uploads');
     });
 });
 
