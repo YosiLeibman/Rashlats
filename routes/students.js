@@ -68,9 +68,9 @@ router.post('/regtoyeshiva', function(req, res){
         return console.log(err);
       }
         html = data;
+        console.log(" TIHS IS THE HTML THAT SENDS TO USER" + html);        
     });
-         console.log(student);
-         res.redirect('/');
+        res.redirect('/');
         fs.writeFile('./logs/regs/' + name + '.log', JSON.stringify(student), function (err){
             if (err) throw err;
             console.log("saved!");
@@ -110,6 +110,7 @@ function sendMailToYeshiva(student){
 }
 
 function sendMailToPerson(name, email, html){
+    console.log(" TIHS IS THE HTML THAT SENDS TO USER" + html);   
     // create reusable transport method (opens pool of SMTP connections)
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -126,7 +127,6 @@ function sendMailToPerson(name, email, html){
     subject: "שלום " + name, // Subject line
     html: html // html body
     };
-
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function (err, info) {
         if(err)

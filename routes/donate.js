@@ -21,6 +21,8 @@ fs.readFile('./email/dntemail.html', 'utf8', function (err,data) {
       return console.log(err);
     }
     html = data;
+    console.log("THIS IS THE HTML" + html);
+    
 });
 
 router.post('/donate', function(req, res){
@@ -96,6 +98,7 @@ router.post('/donate', function(req, res){
       }
       
       function sendMailToPerson(name, email, html){
+            console.log("THIS IS THE HTML" + html);          
           // create reusable transport method (opens pool of SMTP connections)
           var transporter = nodemailer.createTransport({
               service: 'gmail',
